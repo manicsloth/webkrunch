@@ -14,4 +14,3 @@ echo $location;
 $nordic_db=db_connect();
 	$query = $nordic_db->prepare("delete from `walks` where `walks`.`location` = ?");
 	$query->execute(array($location));
-	?>
