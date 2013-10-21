@@ -1,0 +1,44 @@
+Table name: 
+		members
+Fields:
+		id – Auto increment membership number format 00001
+		fname – Forename
+		sname – Surname
+		dob - Date of birth
+		address
+		town
+		postcode
+		emerg_contact - Emergancy contact phone number
+		email
+		hsform – y or n (health and safety for completed?)  --- could possibly be made redundant by new health_saftey table?
+		workshopcomp – y or n (workshop completed?)
+		credits – remaining walk credits
+		reg_date - Date account was created, possibly used for analytics etc?
+		account_status - monitoring account status as number code - see below
+					-1 = account diabled / banned. cannot login.
+					 0 = account newly registered and awaiting email comfirmation to be done
+					 1 = account active and in good standing.
+
+
+Table name: 
+		health_saftey
+Fields:
+		member_id - id of member(same as in members table)
+		hs_status - number code to reflect status of members hs form submition.
+					0 = not submitted form
+					1 = form submitted, awaiting admin to approve it
+					2 = form accepted by admin. member can now walk.
+		
+		approving admin - the admin that approved the form, if not yet approved will be 'na'.
+
+
+CHANGES MADE TO ORIGINAL MEMBERS 
+	removed-
+		mname
+		address 2 + 3
+	added
+		dob
+		emergancy contact
+		email
+		registration date
+		account status
