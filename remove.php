@@ -16,10 +16,10 @@ echo "<p>Warning: This cannot be undone, all changes are permenant.</p>";
 echo "<form action='removeconfirm.php' method='post'>";
 	echo "<select name='location' id='location'>";
 	$nordic_db=db_connect();
-	$query = $nordic_db->prepare("select `location` from `walks`");
+	$query = $nordic_db->prepare("select 'id' , `location` from `walks`");
 	$query->execute();
 	while($data= $query ->fetch(PDO::FETCH_ASSOC)) {
-		echo "<option value='$data[location]'>$data[location]</option>";
+		echo "<option value='$data[id]'>$data[location]</option>";
 	}
 	echo "</select>";
 	echo "<input type='submit'>";

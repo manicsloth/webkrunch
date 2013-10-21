@@ -9,9 +9,15 @@ $config['db'] = array(
 $nordic_db= new PDO('mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['dbname'], $config['db']['username'],$config['db']['password']);
 return $nordic_db;
 }
-$location=$_POST['location'];
-echo $location;
+$id=$_POST['id'];
+echo $id;
 $nordic_db=db_connect();
-	$query = $nordic_db->prepare("delete from `walks` where `walks`.`location` = ?");
-	$query->execute(array($location));
+	$query = $nordic_db->prepare("select `id` , `location` , `details` from `walks` where `id` = ?");
+	$query->execute(array($id));
+	echo "The Following walk has been deleted from the database:";
+	echo "Id = $query[id]";
+	echo "Location: $query[location]";
+	echo "About: $query[details]";
+	$query = $nordic_db->prepare("delete from `walks` where `walks`.`id` = ?");
+	$query->execute(array($id));
 	?>
