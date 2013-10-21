@@ -10,6 +10,7 @@ Fields:
 		postcode
 		emerg_contact - Emergancy contact phone number
 		email
+		password
 		hsform – y or n (health and safety for completed?)  --- could possibly be made redundant by new health_saftey table?
 		workshopcomp – y or n (workshop completed?)
 		credits – remaining walk credits
