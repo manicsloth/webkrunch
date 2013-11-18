@@ -1,0 +1,273 @@
+/*Style sheet for Walk Kernow administration site.
+Made by A.Bragg, WebKrunch 2013*/
+
+* { /*set up page defaults */
+/*	margin: 0px;
+	padding: 0px; */
+	font-family: Helvetica, Ariel, sans-serif;
+}
+
+/*FOOTER*/
+
+#footer{
+	position: absolute; 
+	bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 0.7em;
+	width:300px;
+	text-align: center;
+	color: #919191;
+	border-top:solid 1px;
+
+}
+
+
+
+/*END FOOTER*/
+
+/*GENERAL SITE-WIDE CONFIGS*/
+
+div#content{
+	margin-left:auto;
+	margin-right:auto;
+	width:980px;
+	margin-bottom:100px;
+}
+div#heading{
+	height:60px;
+	border-bottom:solid black 1px;
+	margin-bottom:60px;
+}
+#heading h1{
+	background-color:#006893;
+	width:400px;
+	padding:10px;
+	color:white;
+	border:solid black 1px;
+	border-top-right-radius: 50px;
+	margin-bottom: 0px;
+}
+
+label{
+	font-weight: bold;
+}
+
+button#logout{
+	width:120px;
+	height:30px;
+	float:right;
+	position:relative;
+	top:-60px;
+	box-shadow: 3px 3px 3px #888888;
+}
+button#return_button{
+	width:165px;
+	height: 25px;
+	margin-top:2px;
+	padding-right: 5px;
+	box-shadow: 3px 3px 3px #888888;
+	border-bottom-right-radius: 30px;
+}
+
+.emp_red{   /*used to make bold and red font for emphasis.*/
+	color: red;
+	font-weight: bold;
+}
+.emp_green{   /*used to make green font for emphasis.*/
+	color: green;
+}
+
+
+/*END GENERAL CONFIGS*/
+
+/*LOGIN PAGE*/
+
+#logo{
+	width:150px;
+	height:auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:30px;
+	position:relative;
+	left:-100px;
+}
+
+
+fieldset#loginform { /*feildset containing login form*/
+	width:340px;
+	background-color:lightgrey;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+	border:solid 2px black;
+	padding-top:10px;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+#loginform label, #loginform legend{ /*add margin to labels and legend*/
+	margin:0px 45px 5px 45px;
+}
+legend{
+	font-size:1.15em;
+
+}
+#username, #password{
+	width:250;
+	margin:0px 45px 15px 45px;
+}
+#remeber{
+	margin-left:45px;
+	margin-right:-25px;
+	margin-bottom:10px;
+}
+#submit{
+	width:100px;
+	height:40px;
+	margin: 10px;
+	margin-left:120px;
+}
+#loginerrors{
+	color:red;
+	font-size:1em;
+	margin-left:35px;
+
+}
+#warning{
+	font-size:0.85em;
+	width:300px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+}
+
+/*----- END LOGIN PAGE*/
+
+
+/*ADMIN HOME PAGE*/
+
+div#menu_buttons{
+	margin-top:50px;
+	border: solid black 1px;
+	border-left: hidden;
+	border-right: hidden;
+}
+
+#menu_buttons button{
+	height: 50px;
+	width:193px;
+	margin:24px;
+	box-shadow: 3px 3px 3px #888888;
+}
+
+
+	/*END ADMIN HOME PAGE*/
+
+
+
+/*MEMBERS LIST*/
+
+form#searchform{
+	float:right;
+	margin-bottom:10px;
+	}
+#searchbox{
+	border-radius: 15px;
+	background: url(images/icons/search.png) no-repeat 3px 3px;
+	padding-left:15px;
+}
+#searchbox_reset{
+	width:12]x;
+	height: 12px;
+
+	}
+#member_list{
+	border:solid black 1px;
+	border-collapse:collapse;
+	width:980px;
+	text-align:center;
+}
+
+#member_list td, #member_list tr, #member_list th{
+	border:solid black 1px;
+}
+#member_list tr:hover:not(:first-of-type){
+	background-color: rgba(0, 104, 147, 0.46);
+}	
+
+
+
+/*END MEMBERS LIST*/
+
+
+/*VIEW MEMBER + MODIFY MEMBER*/
+#member_data{
+	margin-top:40px;
+}
+#member_data, #member_data td, #member_data tr, #member_data th{
+	border:solid black 1px;
+	border-collapse:collapse;
+	width:210px;
+	text-align: left;
+	padding:5px;
+}
+table#member_data{
+	width:520px;
+}
+#member_data td{
+	width:290px;
+	text-align: center;;
+}
+
+
+
+button#enable_acc, button#disable_acc{
+	width:120px;
+	height:25px;
+	margin:5px;
+	box-shadow: 3px 3px 3px #888888;
+	display:inline-block;
+	padding-left: 15px;
+}
+button#disable_acc{
+	background-image: url(images/icons/cross.png); 
+	background-size: 15px;
+	background-position: 1px 4px;
+	background-repeat: no-repeat;
+	}
+button#enable_acc{
+	background-image: url(images/icons/tick.png); 
+	background-size: 15px;
+	background-position: 2px 4px;
+	background-repeat: no-repeat;
+}
+#add_credit img, #minus_credit img{
+	width: 15px;
+	height:auto;
+	margin:5px;
+	margin-bottom:1px;
+}
+#credit{
+	display:inline-block;
+	width:30px;
+}
+
+
+#mod_member_form input, #mod_member_form textarea{
+	width:300px;
+	margin:0px;
+}
+#mod_member_form textarea{
+	/*make text area match border of text input*/
+	background-color: white;
+	border: 2px inset;
+}
+button#mod_member{
+	width:220px;
+	height:25px;
+	margin-top:2px;
+	box-shadow: 3px 3px 3px #888888;
+	border-bottom-right-radius: 30px;
+}
+/*END VIEW MEMBER + MODIFY MEMBER
