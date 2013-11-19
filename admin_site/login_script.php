@@ -24,7 +24,7 @@ else {
 	
 	$nordic_db=db_connect(); //connect to db
 	//select statement for user name and password
-	$query = $nordic_db->prepare("select `username`, `rank` from `admins` WHERE username=? AND password=?"); 
+	$query = $nordic_db->prepare("select `username`, `permissions` from `admins` WHERE username=? AND password=?"); 
 	$query->bindParam(1, $username); 
 	$query->bindParam(2, $password); 
 
@@ -39,7 +39,7 @@ else {
 	//Correct password
 	if ($count > 0) {//if user name + password match is found log them in and send to admin home page. also unset the username stored in session variable if exists (used to auto fill the form on login page when user fails login)
 		$_SESSION['activeuser'] = $data['username'];
-		$_SESSION['activeuser_rank'] = $data['rank'];
+		$_SESSION['activeuser_permissions'] = $data['permissions'];
 
 		if(isset($_SESSION['login_username'])){ 
 			unset($_SESSION['login_username']);

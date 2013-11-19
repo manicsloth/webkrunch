@@ -8,7 +8,7 @@
 		exit;
 	}
 	//check if currently logged in admin has the correct permission for this page
-	$perm_check = permission_check($_SESSION['activeuser_rank'], 'L');
+	$perm_check = permission_check($_SESSION['activeuser_permissions'], 'L');
 	if($perm_check == "no"){
 		echo"<h2>Sorry, you do not have sufficient permissions to view this page.</h2> ";
 		echo"<br /><button  onClick='history.go(-1);return true;'> Go Back </button>";

@@ -4,8 +4,8 @@
 function db_connect() {
 	$config['db'] = array(
 		'host'		=> 'localhost',
-		'username'	=> 'root',
-		'password'	=> 'qqq',
+		'username'	=> 'administrator',
+		'password'	=> 'parad1Gm',
 		'dbname'	=> 'nordic'
 		);
 	$nordic_db= new PDO('mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['dbname'], $config['db']['username'],$config['db']['password']);
@@ -60,6 +60,25 @@ function get_member_data($search){
 	//return results to script calling this function
 	return $query;
 	exit();
+}
+
+function get_admin_data($search){
+//function to get admin data, either specific admin or list of all
+
+	$nordic_db=db_connect(); //connect to db
+	if ($search == "all"){ //if search is 'all' then search with no parameters, used to generate list of all members
+		$query = $nordic_db->prepare("select * from `admins`"); 
+	}
+	else{ //search for specified admin by username
+		$query = $nordic_db->prepare("select * from `admins` WHERE username=?"); 
+		$query->bindParam(1, $search); 
+	}
+	//close connection to db
+	$nordic_db = null;
+	//return results to script calling this function
+	return $query;
+	exit();
+
 }
 
 function get_age($dob_month,$dob_day,$dob_year){

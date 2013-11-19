@@ -2,7 +2,7 @@
 session_start();
 require 'functions.php';
 //check user is logged in
-if(!isset($_SESSION['activeuser']) | empty($_SESSION['activeuser'])){
+if(!isset($_SESSION['activeuser']) | empty($_SESSION['activeuser_permissions'])){
 		header("Location:admin_login.php");
 		exit;
 	}

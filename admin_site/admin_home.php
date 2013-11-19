@@ -28,10 +28,8 @@
 		Please click below to begin.
 	</h2>
 	<div id="menu_buttons">
-		<a href="new_walk.php"><button> New Walk </button></a>
-		<a href="new_workshop.php"><button> New Workshop </button></a>
-		<a href="calendar.php"><button> Calendar </button></a>
 		<a href="members.php"><button> Members </button></a>
+		<a href="admins.php"><button> Admin Users </button></a>
 	</div>
 
 	<div id="footer">
