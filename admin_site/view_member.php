@@ -62,14 +62,14 @@
 					    	echo "<span class='emp_red'>Account has been disabled.</span>";
 					    		$perm_check = permission_check($_SESSION['activeuser_permissions'], 'A');
 							if($perm_check == "yes"){
-						    		echo" <br/> <a href='view_member.php?id=$member_data[id]&new_acc_status=enable'><button id='enable_acc'> Enable Account </button></a>";
+						    		echo" <br/> <a href='view_member.php?id=$member_data[id]&new_acc_status=enable'><button id='enable_acc'> Enable  </button></a>";
 						  	  }
 					    break;
 					    case 0: //if account is still awaiting verification via email. offer button to manually verify.
 					    	echo "Account awaiting verification via email.";
 					    	$perm_check = permission_check($_SESSION['activeuser_permissions'], 'A');
 						if($perm_check == "yes"){
-					    		echo "<br/> <a href='view_member.php?id=$member_data[id]&new_acc_status=verify'><button id='enable_acc'>Verify Account </button></a>";
+					    		echo "<br/> <a href='view_member.php?id=$member_data[id]&new_acc_status=verify'><button id='enable_acc'>Verify  </button></a>";
 					    	}
 					    break;
 					    case 1: // if account is active and in good standing. offer button to disable.
@@ -77,7 +77,7 @@
 					    	echo "<span class='emp_green'>Member's account is active.</span>";
 					   	$perm_check = permission_check($_SESSION['activeuser_permissions'], 'A');
 						if($perm_check == "yes"){
-					    		echo "<br/> <a href='view_member.php?id=$member_data[id]&new_acc_status=disable'><button id='disable_acc'> Disable Account </button></a>";
+					    		echo "<br/> <a href='view_member.php?id=$member_data[id]&new_acc_status=disable'><button id='disable_acc'> Disable  </button></a>";
 					    	}
 					    break;
 					}

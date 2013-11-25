@@ -73,6 +73,8 @@ function get_admin_data($search){
 		$query = $nordic_db->prepare("select * from `admins` WHERE username=?"); 
 		$query->bindParam(1, $search); 
 	}
+
+	$query->execute();
 	//close connection to db
 	$nordic_db = null;
 	//return results to script calling this function
@@ -112,6 +114,8 @@ function mod_acc_status($id, $new_acc_status){
 	$query->bindParam(2, $id); 
 	//execute the query, and count the results.
 	$query->execute();
+	//close connection to db
+	$nordic_db = null;
 }
 
 
@@ -133,6 +137,8 @@ function mod_hs_status($id, $new_hs_status){
 	$query->bindParam(3, $id); 
 	//execute the query, and count the results.
 	$query->execute();
+	//close connection to db
+	$nordic_db = null;
 }
 
 
@@ -215,5 +221,31 @@ xmlhttp.onreadystatechange=function()
 xmlhttp.open("GET","adjust_credit.php?mod=plus&id="+str,true);
 xmlhttp.send();
 setTimeout(function(){location.reload();}, 100);
+}
+
+
+
+function comfirmAdminDelete(username){
+var x = confirm('Are you sure you want to delete this account?');
+	if( x ==true){
+		window.location = "mod_admin_script.php?admin="+username+"&delete=true";
+	}
+	else{
+		null;
+	}
+}
+
+function showMe (box) {
+//function to show and hide list of permission on new admin page when selecting the "all" checkbox
+    var chboxs = document.getElementsByName("perms[0]");
+    var vis = "block";
+    for(var i=0;i<chboxs.length;i++) { 
+        if(chboxs[i].checked){
+         vis = "none";
+            break;
+        }
+    }
+    document.getElementById(box).style.display = vis;
+
 }
 </script>

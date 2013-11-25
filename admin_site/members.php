@@ -81,7 +81,7 @@
 
 				 //make new table row
 				echo '<tr>';
-				//echo each row out with link to view that order on click
+				//echo each row out with link to view that member on click
 				echo '<td  onclick="document.location =' . " 'view_member.php?id=$data[id]'" . ' ;" id="'. $id . '">' . $id . '</td>';
 				echo '<td  onclick="document.location =' . " 'view_member.php?id=$data[id]'" . ' ;">' . $name . '</td>';
 				echo '<td  onclick="document.location =' . " 'view_member.php?id=$data[id]'" . ' ;">' . $location . '</td>';
